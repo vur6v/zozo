@@ -1,0 +1,271 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: right;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #264653;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f4a261;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #f4a261;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Welcome Section */
+#welcome {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #264653;
+    color: white;
+}
+
+#welcome h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#welcome p {
+    font-size: 20px;
+    color: #f0f0f0;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* About Us Section */
+#about {
+    padding: 20px 20px;
+    text-align: center;
+    background-color: #e9c46a;
+    color: #264653;
+}
+
+#about h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+}
+
+/* Branches Section */
+#branches {
+    padding: 40px 20px;
+    background-color: #264653;
+    text-align: center;
+    color: white;
+}
+
+#branches h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.branch-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.branch-box {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #f4a261;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    width: 150px;
+    text-align: center;
+}
+
+.branch-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Products Section */
+#products {
+    padding: 40px 20px;
+    background-color: #e9c46a;
+    text-align: center;
+    color: #264653;
+}
+
+#products h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.product-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-box {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #f4a261;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    width: 150px;
+    text-align: center;
+    cursor: pointer; /* إضافة شكل المؤشر */
+}
+
+.product-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Overlay */
+.overlay {
+    display: none; /* أخفيه افتراضيًا */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية مظللة */
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.details-box {
+    background-color: white; /* خلفية المربع */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: right; /* محاذاة النص لليمين */
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.contact-section {
+    background-color: #f4f4f4; /* لون الخلفية */
+    padding: 60px;
+    text-align: center;
+    background-color: #e8e8e8; /* اختر لونًا مختلفًا لتفريق القسم */
+    position: relative;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    
+}
+
+.contact-item {
+    background-color: rgba(255, 0, 0, 0.3); /* خلفية شفافة */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px; /* حجم المربع */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* ظل خفيف */
+}
+
+.contact-item h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.contact-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-links a:hover {
+    background-color: #ffcc00; /* اللون عند تمرير الفأرة */
+}

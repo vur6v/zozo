@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وكالة الشعار</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            وكالة الشعار
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#products">منتجاتنا</a></li>
+                <li><a href="#branches">فروعنا</a></li>
+                <li><a href="#">التواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <section id="welcome">
+        <h1 class="fade-in">مرحبًا بكم في وكالة الشعار</h1>
+        <p class="fade-in">نحن هنا لنقدم لكم أفضل المنتجات الطبيعية.</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2 class="elevated">من نحن</h2>
+        <p>نحن في وكالة الشعار نقدم مجموعة متنوعة من الأعشاب والزيوت الطبيعية، ونسعى لتزويد عملائنا بأفضل المنتجات.</p>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches">
+        <h2>فروعنا</h2>
+        <div class="branch-boxes">
+            <div class="branch-box">القاهرة</div>
+            <div class="branch-box">الإسماعيلية</div>
+            <div class="branch-box">مصر القديمة</div>
+            <div class="branch-box">الجيزة</div>
+            <div class="branch-box">الإسكندرية</div>
+            <div class="branch-box">بورسعيد</div>
+            <div class="branch-box">المنصورة</div>
+            <div class="branch-box">الأقصر</div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>منتجاتنا</h2>
+        <div class="product-boxes">
+            <div class="product-box" onclick="showDetails('عطارة')">عطارة</div>
+            <div class="product-box" onclick="showDetails('أعشاب')">أعشاب</div>
+            <div class="product-box" onclick="showDetails('زيوت طبيعية')">زيوت طبيعية</div>
+            <div class="product-box" onclick="showDetails('بن')">بن</div>
+        </div>
+    </section>
+
+    <!-- Overlay for Product Details -->
+    <div id="overlay" class="overlay" onclick="hideDetails()">
+        <div class="details-box" onclick="event.stopPropagation();">
+            <span class="close-btn" onclick="hideDetails()">×</span>
+            <h2 id="product-title">تفاصيل المنتج</h2>
+            <p id="product-description">هنا يمكنك قراءة المزيد عن منتجاتنا.</p>
+        </div>
+    </div>
+
+    <script>
+        function showDetails(product) {
+            document.getElementById('overlay').style.display = 'flex';
+            document.getElementById('product-title').innerText = `تفاصيل ${product}`;
+            document.getElementById('product-description').innerText = `هنا يمكنك قراءة المزيد عن منتجات ${product} التي نقدمها.`;
+        }
+
+        function hideDetails() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- Contact Us Section -->
+<section id="contact" class="contact-section">
+    <h2>التواصل معنا</h2>
+    <p>نحن هنا لمساعدتك. يمكنك التواصل معنا عبر الأرقام التالية:</p>
+    <div class="contact-info">
+        <div class="contact-item">
+            <h3>رقم الشكاوى</h3>
+            <p>0123456789</p>
+        </div>
+        <div class="contact-item">
+            <h3>رقم الاستفسارات</h3>
+            <p>0987654321</p>
+        </div>
+    </div>
+    <div class="contact-links">
+        <a href="https://facebook.com" target="_blank">فيسبوك</a>
+        <a href="https://wa.me/0123456789" target="_blank">واتساب</a>
+    </div>
+</section>
